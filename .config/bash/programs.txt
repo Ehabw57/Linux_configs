@@ -1,0 +1,8 @@
+nvim
+mariadb
+python3.4
+node
+bash
+ranger
+htop
+vim

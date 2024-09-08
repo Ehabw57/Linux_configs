@@ -1,0 +1,11 @@
+super + {b, s, d, t, g, r, e}
+	/home/zerobors/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
+#	maim { , --select} $(date).jpg 
+alt + s + {s, a}
+	maim { , --select} |  xclip -selection clipboard -target image/png
+alt + space
+	rofi -config ~/.config/rofi/config.rasi -show drun &
+alt + shift + q
+	sh ~/.config/polybar/grayblocks/scripts/powermenu.sh &
+alt + m + {u, i}
+	 i3-msg layout toggle {stacking tabbed, splith splitv} > /dev/null

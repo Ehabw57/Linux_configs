@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if a command is provided as an argument
+if [ -z "$1" ]; then
+    exit 0
+fi
+
+# Concatenate the command with its original path
+COMMAND=~/.config/bash/scripts/"$1"
+
+# Check if Alacritty is running
+if pgrep -x "alacritty" > /dev/null; then
+    # If Alacritty is running, focus it and send the command
+    i3-msg [class="^Alacritty$"] focus >> /dev/null
+    alacritty_window_id=$(xdotool search --onlyvisible --class "Alacritty" | head -n 1)
+    xdotool type --window $alacritty_window_id "$COMMAND"
+    xdotool key --window $alacritty_window_id Return
+else
+    # If Alacritty is not running, start it with the command
+    alacritty -e "$COMMAND"
+	sleep 2
+    i3-msg [class="^Alacritty$"] focus >> /dev/null
+fi
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Function to list all windows in the current tmux session
+PROGRAMS="/home/zerobors/.config/bash/programs.txt"
+# Function to create a new window with an optional name and command to execute
+create_window() {
+	WINDOW_NAME=$(cat "$PROGRAMS" | fzf)
+    if [ -n "$WINDOW_NAME" ]; then
+		tmux new-window -n "$WINDOW_NAME" "$WINDOW_NAME"
+	else
+		echo "No program selected"
+    fi
+}
+
+
+# Main script logic
+main() {
+    case "$1" in
+        new)
+            create_window "$2" "$3"
+            ;;
+        *)
+            echo "Usage: $0 {list|new [window_name] [command]|select|close}"
+            exit 1
+            ;;
+    esac
+}
+
+# Execute main function with all script arguments
+if [ -n "$TMUX" ]; then
+	main "$@"
+else
+	echo "You are not in a tmux session"
+fi
+
