@@ -2,7 +2,7 @@
 
 # -----Basic config------------
 include ~/.config/i3/key_maps.conf
-include ~/.config/i3/colors.conf
+include ~/.config/i3/i3_colors
 include ~/.config/i3/global_settings.conf
 include ~/.config/i3/startup.conf
 
