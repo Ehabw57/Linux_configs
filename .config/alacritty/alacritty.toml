@@ -1,40 +1,40 @@
-# Base16 Chalk - alacritty color config
-# Chris Kempson (http://chriskempson.com)
+# base16 Blueish - alacritty color config
+# Ben Mayoras
 
 [colors]
 draw_bold_text_with_bright_colors = false
 
 # Default colors
 [colors.primary]
-background = '0x151515'
-foreground = '0xd0d0d0'
+background = '0x182430'
+foreground = '0xc8e1f8'
 
 # Colors the cursor will use if `custom_cursor_colors` is true
 [colors.cursor]
-text = '0x151515'
-cursor = '0xd0d0d0'
+text = '0x182430'
+cursor = '0xc8e1f8'
 
 # Normal colors
 [colors.normal]
-black = '0x151515'
-red = '0xfb9fb1'
-green = '0xacc267'
-yellow = '0xddb26f'
-blue = '0x6fc2ef'
-magenta = '0xe1a3ee'
-cyan = '0x12cfc0'
-white = '0xd0d0d0'
+black = '0x182430'
+red = '0x4ce587'
+green = '0xc3e88d'
+yellow = '0x82aaff'
+blue = '0x82aaff'
+magenta = '0xff84dd'
+cyan = '0x5fd1ff'
+white = '0xc8e1f8'
 
 # Bright colors
 [colors.bright]
-black = '0x505050'
-red = '0xeda987'
-green = '0x202020'
-yellow = '0x303030'
-blue = '0xb0b0b0'
-magenta = '0xe0e0e0'
-cyan = '0xdeaf8f'
-white = '0xf5f5f5'
+black = '0x46290a'
+red = '0xf6a85c'
+green = '0x243c54'
+yellow = '0x46290a'
+blue = '0x74afe7'
+magenta = '0xddeaf6'
+cyan = '0xbbd2e8'
+white = '0x8f98a0'
 
 [font]
 normal = { family = "DejaVu Sans Mono", style = "Regular" }
