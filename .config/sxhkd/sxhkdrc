@@ -1,3 +1,52 @@
+# Spawn a termnal
+alt + Return 
+	alacritty
+
+# Reloade keybindgs
+alt + r
+	pkill -USR1 -x sxhkd
+
+# Restart bspwm
+alt + shift + r
+	bspc wm -r
+
+# Toggle node modes 
+alt + shift + {o,t,p}
+    bspc node -t {~floating,~tiled,~pseudo_tiled}
+
+alt + f
+	bspc node -t ~fullscreen
+
+# Switch foucse to float
+alt + o
+	bspc node  -f next.!tiled
+
+# Kill node
+alt + q
+	bspc node -c
+
+# focus or move the node in the given direction
+alt + {_,shift + }{h,j,k,l}
+	 bspc node -{f,s} {west,south,north,east} 
+
+# focus descktop or send node to the given desktop
+alt + {_,shift + }{1-7}
+	bspc {desktop -f,node -d} '^{1-7}'
+
+# Switching mode tiles or monlic
+alt + {u, i}
+	bspc desktop -l {monocle,tiled}
+
+# expand a window by moving one of its side outward
+super + {h,j,k,l}
+	bspc node -z {left -30 0,top 0 30,top 0 -30,left 30 0}
+
+# set the node flags
+super + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+
+
 super + {b, s, d, t, g, r, e}
 	/home/zerobors/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
 #	maim { , --select} $(date).jpg 
@@ -7,5 +56,5 @@ alt + space
 	sh ~/.config/rofi/launcher/launcher.sh &
 alt + shift + q
 	sh ~/.config/rofi/powermenu/powermenu.sh &
-alt + m + {u, i}
-	 i3-msg layout toggle {stacking tabbed, splith splitv} > /dev/null
+#alt + m + {u, i}
+#	 i3-msg layout toggle {stacking tabbed, splith splitv} > /dev/null

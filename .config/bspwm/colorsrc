@@ -1,0 +1,2 @@
+bspc config focused_border_color "#dfdfff"
+bspc config normal_border_color "#0f0f0f"
