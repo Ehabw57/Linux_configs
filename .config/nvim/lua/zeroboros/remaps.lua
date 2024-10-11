@@ -7,7 +7,7 @@ vim.keymap.set('n', 'n', ' nzz')				-- Always center cursor when searching next
 vim.keymap.set('n', 'N', ' Nzz')				-- Always center cursor when searching pervouis
 
 -- Some keymaps i hate
-vim.keymap.set('n', 'q', function() vim.notify("Fuck You DO NOT hit 'q' !")end)
+vim.keymap.set('n', 'q', function() vim.notify("DO NOT hit 'q' !")end)
 
 -- All about files
 vim.keymap.set('n', '<leader>x', ':!chmod u+x %<CR>') -- Make my file excuteable
@@ -29,8 +29,8 @@ vim.keymap.set('n', 'x', '"_x')		-- Throw the fucking x into the void regesters
 vim.keymap.set('n', '<leader>e', ':Ex<CR>')		-- Open Netrw
 vim.keymap.set('n', '<leader>pw', ':w<CR>:bw<CR>')	-- Save and clear buffer
 vim.keymap.set('n', '<leader>pq', ':bw! <CR>')		-- Clear buffer without saving
-vim.keymap.set('n', '<leader>pn', ':bn <CR>')		-- Clear buffer without saving
-vim.keymap.set('n', '<leader>pp', ':bp <CR>')		-- Clear buffer without saving
+--vim.keymap.set('n', '<leader>pn', ':bn <CR>')		-- move to the next buffer
+--vim.keymap.set('n', '<leader>pp', ':bp <CR>')		-- Move to the prev buffer
 vim.keymap.set('n', '<leader>w', ':w <CR>')		-- Clear buffer with saving
 
 
@@ -47,5 +47,3 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')		-- Foucs right window
 vim.keymap.set('n', '<leader>py', ':!pycodestyle %<CR>')
 vim.keymap.set('n', '<leader>sh', ':!shellcheck %<CR>')
 vim.keymap.set('n', '<leader>by', ':!betty %<CR>')
-vim.keymap.set('n', '<C-j>', ':term /home/zerobors/.config/bash/scripts/TmuxPilot new<CR>')		-- Start a new TmuxPilot session
-vim.keymap.set('n', '<C-l>', ':term /home/zerobors/.config/bash/scripts/TmuxPilot list<CR>')	-- List all sesssion using TmuxPilot

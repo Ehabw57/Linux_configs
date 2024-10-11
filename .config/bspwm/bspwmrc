@@ -1,15 +1,24 @@
 #!/bin/bash
+
+# Startups
+setxkbmap -layout us,ara -option grp:win_space_toggle 
+setxkbmap -option caps:escape
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
-pgrep -x polybar || "$HOME"/.config/polybar/launch.sh
+pgrep -x polybar > /dev/null || "$HOME"/.config/polybar/launch.sh
+pgrep -x xwinwrap > /dev/null || "$HOME"/set_live.sh
 
+# Configs
 bspc monitor -d 1 2 3 4 5 6
+source "$HOME/.config/bspwm/colorsrc"
+bspc config border_width         1
+bspc config window_gap          10
+bspc config top_padding 27
 
-bspc config border_width         2
-bspc config window_gap          12
-bspc config top_padding 30
 
-bspc config split_ratio          0.52
+bspc rule -a '*:*:Scratchpad' state=floating sticky=on rectangle=1300x600+320+220
+bspc config split_ratio          0.5
+
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config pointer_modifier mod1
@@ -17,11 +26,9 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action2 resize_corner
 
+# window rules
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Thunar state=floating
 bspc rule -a Screenkey manage=off
-setxkbmap -layout us,ara -option grp:win_space_toggle 
-setxkbmap -option caps:escape
-"$HOME"/set_live.sh

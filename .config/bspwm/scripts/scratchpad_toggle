@@ -1,0 +1,16 @@
+#!/bin/bash
+
+wid=$(bspc query -N -n .floating.sticky.window.!hidden)
+
+if [ -z "$wid" ]; then
+	scratch=$(bspc query -N -n .floating.sticky.window.hidden)
+	if [ -z "$scratch" ]; then
+		alacritty -t Scratchpad&
+	else
+		bspc node "$scratch" --flag hidden=off -f
+	fi
+
+else
+    bspc node "$wid" --flag hidden -f
+fi
+

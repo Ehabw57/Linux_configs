@@ -1,8 +1,21 @@
+# ---Lanuchers---
 # Spawn a termnal
 alt + Return 
 	alacritty
 
-# Reloade keybindgs
+# ScreenShot
+alt + s + {_, a}
+	maim { , --select} |  xclip -selection clipboard -target image/png
+
+# Aplication launcher
+alt + space
+	sh ~/.config/rofi/launcher/launcher.sh &
+
+# Power menue
+alt + shift + q
+	sh ~/.config/rofi/powermenu/powermenu.sh &
+
+# Reload keybindgs
 alt + r
 	pkill -USR1 -x sxhkd
 
@@ -10,51 +23,69 @@ alt + r
 alt + shift + r
 	bspc wm -r
 
+# volume control
+alt + {bracketleft, bracketright, backslash}
+    amixer set Master {5%-, 5%+, toggle} > /dev/null 2>&1; pkill -USR10 -x dwmblocks
+
+# Fast acsess
+super + {b, s, d, t, g, r, e}
+	/home/zerobors/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
+
+
+# ---Window&Layouts--
 # Toggle node modes 
 alt + shift + {o,t,p}
     bspc node -t {~floating,~tiled,~pseudo_tiled}
 
+# Fullscreen
 alt + f
 	bspc node -t ~fullscreen
 
-# Switch foucse to float
-alt + o
-	bspc node  -f next.!tiled
+
+# Foucas last desktop
+alt + Tab
+	bspc desktop -f last
 
 # Kill node
 alt + q
 	bspc node -c
 
-# focus or move the node in the given direction
-alt + {_,shift + }{h,j,k,l}
-	 bspc node -{f,s} {west,south,north,east} 
+# Navgation
+alt + j
+    bspc node -f south || bspc node -f next.local.window
+alt + k
+    bspc node -f north || bspc node -f prev.local.window
+alt + {h,l}
+    bspc node -f {west,east}
+
+# scratchpad toggle
+alt + z
+	~/.config/bspwm/scripts/scratchpad_toggle
+
+# move the node in the given direction
+alt + shift + {h,j,k,l}
+	 bspc node -s {west,south,north,east} 
 
 # focus descktop or send node to the given desktop
 alt + {_,shift + }{1-7}
 	bspc {desktop -f,node -d} '^{1-7}'
 
-# Switching mode tiles or monlic
-alt + {u, i}
-	bspc desktop -l {monocle,tiled}
+# Switching descktop mode
+alt + m
+	bspc desktop -l next
 
 # expand a window by moving one of its side outward
 super + {h,j,k,l}
 	bspc node -z {left -30 0,top 0 30,top 0 -30,left 30 0}
 
 # set the node flags
-super + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+alt + {shift + minus,x,y}
+	bspc node -g {hidden,locked,sticky}
 
+# Switch foucse to float
+alt + o
+	bspc node  -f next.!tiled
 
+alt + b
+   polybar-msg cmd toggle && bspc config top_padding $(bspc config top_padding | grep -q "27" && echo 0 || echo 27)
 
-super + {b, s, d, t, g, r, e}
-	/home/zerobors/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
-#	maim { , --select} $(date).jpg 
-alt + s + {s, a}
-	maim { , --select} |  xclip -selection clipboard -target image/png
-alt + space
-	sh ~/.config/rofi/launcher/launcher.sh &
-alt + shift + q
-	sh ~/.config/rofi/powermenu/powermenu.sh &
-#alt + m + {u, i}
-#	 i3-msg layout toggle {stacking tabbed, splith splitv} > /dev/null
