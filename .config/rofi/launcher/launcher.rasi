@@ -1,0 +1,78 @@
+@import                          "../rofi_colors.rasi"
+* {
+    font:                        "JetBrains Mono Nerd Font 10";
+}
+
+* {
+    font:   "FiraCode Nerd Font Medium 12";
+
+    background-color:   transparent;
+    text-color:         @foreground;
+    margin:     0;
+    padding:    5;
+    spacing:    0;
+}
+
+window {
+    location:   center;
+    width:      500;
+    background-color:   @background;
+	border: 1px solid;
+	border-color:  @blue;
+	border-radius:  12px;
+}
+
+inputbar {
+    spacing:    8px; 
+    padding:    12px 9px;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @foreground;
+}
+
+
+listview {
+    lines:      6;
+    columns:    1;
+    fixed-height:   false;
+}
+
+element {
+    margin:     3px;
+    spacing:    0px;
+}
+
+element normal normal {
+    text-color: @foreground;
+}
+
+element normal urgent {
+    text-color: @foreground;
+}
+
+
+element alternate active {
+    text-color: @foreground;
+}
+
+element selected {
+    text-color: @background;
+	border-radius: 19px;
+}
+
+element selected normal, element selected active {
+    background-color:   @blue;
+}
+
+element-icon {
+    size:   0.9em;
+}
+
+element-text {
+    text-color: inherit;
+}

@@ -1,0 +1,82 @@
+
+configuration {
+	/*---------- General setting ----------*/
+	modi: "drun";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+	icon-theme: "Papirus";
+	steal-focus: false;
+
+	/*---------- Matching setting ----------*/
+	matching: "fuzzy";
+	tokenize: true;
+
+	/*---------- SSH settings ----------*/
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+	parse-hosts: true;
+	parse-known-hosts: true;
+
+	/*---------- Drun settings ----------*/
+	drun-categories: "";
+	drun-match-fields: "name,generic,exec,categories,keywords";
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-show-actions: false;
+	drun-url-launcher: "xdg-open";
+	drun-use-desktop-cache: false;
+	drun-reload-desktop-cache: false;
+	drun {
+		/** Parse user desktop files. */
+		parse-user:   true;
+		/** Parse system desktop files. */
+		parse-system: true;
+    }
+
+	/*---------- Run settings ----------*/
+	run-command: "{cmd}";
+	run-list-command: "";
+	run-shell-command: "{terminal} -e {cmd}";
+
+	/*---------- Fallback Icon ----------*/
+	run,drun {
+		fallback-icon: "application-x-addon";
+	}
+
+
+	/*---------- Display setting ----------*/
+	display-drun: "Apps";
+
+	/*---------- Misc setting ----------*/
+	terminal: "rofi-sensible-terminal";
+	font: "Mono 12";
+	sort: false;
+	threads: 0;
+	click-to-exit: false;
+
+
+	/*---------- Keybindings ----------*/
+	kb-clear-line: "Control+d";
+	kb-move-front: "Control+i";
+	kb-move-end: "Control+a";
+	kb-move-char-back: "Left,Control+h";
+	kb-remove-char-forward: "Control+x";
+	kb-remove-char-back: "BackSpace,Shift+BackSpace";
+	kb-remove-to-sol: "Control+u";
+	kb-accept-entry: "Control+y,Return,KP_Enter";
+	kb-accept-custom: "Control+Return";
+	kb-accept-custom-alt: "Control+Shift+Return";
+	kb-accept-alt: "Shift+Return";
+	kb-delete-entry: "Shift+Delete";
+	kb-row-down: "Control+n";
+	kb-row-up: "Control+p";
+	kb-row-first: "Control+g";
+	kb-cancel: "Escape";
+	me-select-entry: "MousePrimary";
+	me-accept-entry: "MouseDPrimary";
+	me-accept-custom: "Control+MouseDPrimary";
+}
+@theme "/home/zerobors/.local/share/rofi/themes/rounded-purple-dark.rasi"
