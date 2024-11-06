@@ -3,7 +3,7 @@
 # Author: Ehab Hegazy
 
 
-find  ~/Repos/Linux_configs/.config -maxdepth 1 -type d | while IFS= read -r DIRO; do
+find  ./.config -maxdepth 1 -type d | while IFS= read -r DIRO; do
     BASENAME=$(basename "$DIRO")
     
     # Skip the current directory (i.e., ./config itself)
@@ -19,4 +19,6 @@ find  ~/Repos/Linux_configs/.config -maxdepth 1 -type d | while IFS= read -r DIR
     # Create the symlink
     ln -s "$DIRO" ~/.config/"$BASENAME"
 done
+
+cat ./packgaes.txt | xargs sudo xbps-install -y
 

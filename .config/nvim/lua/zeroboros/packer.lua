@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -15,7 +14,6 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-	use "HiPhish/nvim-ts-rainbow2"
 	use "LunarVim/Colorschemes"
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use {

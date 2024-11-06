@@ -1,2 +1,2 @@
-bspc config focused_border_color "#82aaff"
-bspc config normal_border_color "#46290a"
+bspc config focused_border_color "#fabd2f"
+bspc config normal_border_color "#32302f"

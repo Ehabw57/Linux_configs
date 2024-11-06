@@ -1,0 +1,12 @@
+xorg
+xsettingsd
+bspwm
+alacritty
+polybar
+neovim
+dunst
+rofi
+tmux
+maim
+mpv
+feh

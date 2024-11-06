@@ -79,4 +79,3 @@ configuration {
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
 }
-@theme "/home/zerobors/.local/share/rofi/themes/rounded-purple-dark.rasi"

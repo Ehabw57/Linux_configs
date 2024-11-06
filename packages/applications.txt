@@ -1,0 +1,9 @@
+telegram-desktop
+audacity
+discord
+obs-studio
+shotcut
+thunar
+chromium
+gimp
+libreoffice-writer

@@ -19,7 +19,6 @@ window {
     background-color:   @background;
 	border: 1px solid;
 	border-color:  @blue;
-	border-radius:  12px;
 }
 
 inputbar {
@@ -62,7 +61,7 @@ element alternate active {
 
 element selected {
     text-color: @background;
-	border-radius: 19px;
+	border-radius: 0px;
 }
 
 element selected normal, element selected active {

@@ -1,0 +1,14 @@
+docker
+fzf
+git
+htop
+lua
+make
+net-tools
+nodejs
+python3
+tar
+tldr
+valgrind
+wget
+zip

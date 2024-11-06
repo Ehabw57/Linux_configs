@@ -1,20 +1,17 @@
 #!/bin/bash
 
 # Startups
-setxkbmap -layout us,ara -option grp:win_space_toggle 
-setxkbmap -option caps:escape
 pgrep -x sxhkd > /dev/null || sxhkd &
 #pgrep -x picom > /dev/null || picom &
+pgrep -x xsettingsd > /dev/null || xsettingsd &
 pgrep -x polybar > /dev/null || "$HOME"/.config/polybar/launch.sh
-#pgrep -x xwinwrap > /dev/null || "$HOME"/set_live.sh
-
-# Configs
-bspc monitor -d 1 2 3 4 5 6
 source "$HOME/.config/bspwm/colorsrc"
 bspc config border_width         1
-bspc config window_gap          10
-bspc config top_padding 27
-
+bspc config window_gap          0
+bspc config top_padding 24
+xrandr --output DP-2 --mode 1920x1080 --primary --output VGA-1 --mode 1024x768 --rotate right --right-of DP-2
+bspc monitor DP-2 -d 1 2 3 4 5
+bspc monitor VGA-1 -d 6
 
 bspc rule -a '*:*:Scratchpad' state=floating sticky=on rectangle=1300x600+320+220
 bspc config split_ratio          0.5
@@ -28,5 +25,8 @@ bspc config pointer_action2 resize_corner
 
 # window rules
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a firefox desktop='^2'
+bspc rule -a Chromium desktop='^2'
 bspc rule -a Thunar state=floating
+bspc rule -a feh state=floating
+bspc rule -a Nsxiv state=floating
+feh --bg-fill ~/.cache/wallpaper.jpg

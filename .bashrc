@@ -10,6 +10,11 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias ll="ls --color=auto -al"
 alias vim="nvim"
+alias xu="sudo xbps-install -S; sudo xbps-install -u"
+alias xi="sudo xbps-install"
+alias xr="sudo xbps-remove -R"
+alias xq="sudo xbps-query -Rs"
+alias xl="sudo xbps-query -l"
 
 
 # Change cmd prompt
@@ -24,11 +29,10 @@ web02="$username""18.210.19.134"
 lb01="$username""52.204.97.243"
 
 #some cool key-bindgs
-bind -x '"\C-o":"~/.config/bash/scripts/TmuxPilot new"' # Find Your way in dirctorys
-bind -x '"\C-l":"~/.config/bash/scripts/TmuxPilot list"' # List all opend sessions
+bind -x '"\C-o":"source ~/scripts/navigetor.sh"' # Find Your way in dirctorys
+bind -x '"\C-l":". ~/scripts/list_sessions.sh"' # List all opend sessions
 
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init --path)"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
-

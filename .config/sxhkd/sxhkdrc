@@ -13,7 +13,7 @@ alt + space
 
 # Power menue
 alt + shift + q
-	sh ~/.config/rofi/powermenu/powermenu.sh &
+	bash -e ~/.config/rofi/powermenu/powermenu.sh
 
 # Reload keybindgs
 alt + r
@@ -24,8 +24,12 @@ alt + shift + r
 	bspc wm -r
 
 # volume control
-alt + {bracketleft, bracketright, backslash}
-    amixer set Master {5%-, 5%+, toggle} > /dev/null 2>&1; pkill -USR10 -x dwmblocks
+alt + {bracketleft, bracketright}
+    pactl set-sink-volume 1  {-5%, +5%}
+
+alt + backslash
+	pactl set-sink-mute 1 toggle
+
 
 # Fast acsess
 super + {b, s, d, t, g, r, e}
@@ -67,8 +71,8 @@ alt + shift + {h,j,k,l}
 	 bspc node -s {west,south,north,east} 
 
 # focus descktop or send node to the given desktop
-alt + {_,shift + }{1-7}
-	bspc {desktop -f,node -d} '^{1-7}'
+alt + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
 
 # Switching descktop mode
 alt + m
@@ -87,5 +91,5 @@ alt + o
 	bspc node  -f next.!tiled
 
 alt + b
-   polybar-msg cmd toggle && bspc config top_padding $(bspc config top_padding | grep -q "27" && echo 0 || echo 27)
+   polybar-msg cmd toggle && bspc config top_padding $(bspc config top_padding | grep -q "24" && echo 0 || echo 24)
 

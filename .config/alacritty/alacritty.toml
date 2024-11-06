@@ -1,4 +1,3 @@
-import = ['~/.config/alacritty/colors.toml']
 [font]
 normal = { family = "DejaVu Sans Mono", style = "Regular" }
 bold = { family = "DejaVu Sans Mono", style = "Bold" }
@@ -13,7 +12,7 @@ y = 0
 x = 0
 y = 2
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/bash"
 
 [window]
@@ -28,3 +27,9 @@ bindings = [
 { key = "H", mods = "Control", action = "ToggleViMode"},
 { key = "P", mods = "Control", action = "Paste"},
 ]
+
+[general]
+live_config_reload = true
+import = ['~/.config/alacritty/colors.toml']
+
+[terminal]

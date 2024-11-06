@@ -8,12 +8,12 @@ uptime=$(uptime -p | sed -e 's/up //g')
 user=$(whoami)
 
 # Options
-shutdown=' Shutdown'
-reboot=' Reboot'
-suspend=' Suspend'
-logout=' Logout'
-yes=' Yes'
-no=' No'
+shutdown='Shutdown'
+reboot='Reboot'
+suspend='Suspend'
+logout='Logout'
+yes='Yes'
+no='No'
 
 # Rofi CMD
 rofi_cmd() {
@@ -38,12 +38,12 @@ confirm_cmd() {
 
 # Ask for confirmation
 confirm_exit() {
-	echo -e "$yes\n$no" | confirm_cmd
+	echo  -e "$yes\n$no" | confirm_cmd
 }
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo  -e "$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -51,13 +51,11 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+			doas poweroff
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
+			doas reboot
 		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
+			doas ZZZ -H
 		elif [[ $1 == '--logout' ]]; then
 			bspc quit	
 		fi

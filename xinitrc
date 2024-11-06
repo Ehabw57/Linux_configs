@@ -47,6 +47,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+export XCURSOR_THEME=Pixel
+export XCURSOR_SIZE=24  # Optional
 setxkbmap -layout us,ara -option grp:win_space_toggle 
 setxkbmap -option caps:escape
 bspwm
