@@ -1,0 +1,23 @@
+background: "#282a36"
+foreground: "#f8f8f2"
+primary: "#6272a4"
+secondary: "#44475a"
+red: "#ff5555"
+green: "#50fa7b"
+yellow: "#f1fa8c"
+blue: "#bd93f9"
+magenta: "#ff79c6"
+cyan: "#8be9fd"
+white: "#f8f8f2"
+black: "#28a236"
+
+sblack: "#21222c"
+sred: "#ff6e6e"
+sgreen: "#69ff94"
+syellow: "#ffffa5"
+sblue: "#d6acff"
+smagenta: "#ff92df"
+scyan: "#a4ffff"
+swhite: "#ffffff"
+
+

@@ -1,0 +1,12 @@
+gtk-color-scheme = "bg_color:{{ theme.background }}
+color0:{{ theme.background }}
+text_color:{{ theme.foreground }}
+selected_bg_color:{{ theme.primary }}
+selected_fg_color:{{ theme.foreground }}
+tooltip_bg_color:{{ theme.background }}
+tooltip_fg_color:{{ theme.foreground }}
+titlebar_bg_color:{{ theme.background }}
+titlebar_fg_color:{{ theme.foreground }}
+menu_bg_color:{{ theme.background }}
+menu_fg_color:{{ theme.foreground }}
+link_color:{{ theme.primary }}"

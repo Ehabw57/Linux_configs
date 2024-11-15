@@ -1,0 +1,27 @@
+[colors.primary]
+background = '{{ theme.background }}'
+foreground = '{{ theme.foreground  }}'
+
+[colors.cursor]
+text = '{{ theme.sblack }}'
+cursor = '{{ theme.cyan }}'
+
+[colors.normal]
+black = '{{ theme.black }}'
+red = '{{ theme.red }}'
+green = '{{ theme.green }}'
+yellow = '{{ theme.yellow }}'
+blue = '{{ theme.blue  }}'
+magenta = '{{ theme.magenta }}'
+cyan = '{{ theme.cyan }}'
+white = '{{ theme.white }}'
+
+[colors.bright]
+black = '{{ theme.sblack }}'
+red = '{{ theme.sred }}'
+green = '{{ theme.sgreen }}'
+yellow = '{{ theme.syellow }}'
+blue = '{{ theme.sblue  }}'
+magenta = '{{ theme.smagenta }}'
+cyan = '{{ theme.scyan }}'
+white = '{{ theme.swhite }}'

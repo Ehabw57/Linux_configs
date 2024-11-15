@@ -17,12 +17,12 @@ fi
 
 # Check if mpv is running and kill it
 if pgrep mpv > /dev/null; then
-	killall mpv
+	pkill mpv
 	sleep 0.3
 fi
 
 # Launch xwinwrap with mpv playing the selected video
-xwinwrap -g 1920x1280 -s -b -fs -st -sp -nf -ov -fdt -- mpv -wid WID --really-quiet --framedrop=vo --no-audio --loop --panscan="1.0" --no-osc "$RAND_FILE" > /dev/null 2>&1 &
+xwinwrap -g 1920x1080+0+0 -s -b -fs -st -sp -nf -ov -fdt -- mpv -wid WID --really-quiet --framedrop=vo --no-audio --loop --panscan="1.0" --no-osc "$RAND_FILE" > /dev/null 2>&1 &
 
 # Update the cache with the selected wallpaper
 echo "$RAND_FILE" > "$CACHE_FILE"

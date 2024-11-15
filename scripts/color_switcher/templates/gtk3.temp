@@ -1,0 +1,9 @@
+@define-color bg_color {{ theme.sblack }};
+@define-color fg_color {{ theme.foreground }};
+@define-color base_color {{ theme.background }};
+@define-color text_color {{ theme.foreground }};
+@define-color text_color_disabled {{ theme.red }};
+@define-color selected_bg_color {{ theme.sblack }};
+@define-color selected_fg_color {{ theme.swhite }};
+@define-color tooltip_bg_color {{ theme.background }};
+@define-color tooltip_fg_color {{ theme.foreground }};

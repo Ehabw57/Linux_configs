@@ -4,8 +4,6 @@ alt + Return
 	alacritty
 
 # ScreenShot
-alt + s + {_, a}
-	maim { , --select} |  xclip -selection clipboard -target image/png
 
 # Aplication launcher
 alt + space
@@ -33,7 +31,7 @@ alt + backslash
 
 # Fast acsess
 super + {b, s, d, t, g, r, e}
-	/home/zerobors/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
+	"$HOME"/.config/i3/scripts/focus_app.sh {chromium, shotcut, discord, telegram, gimp, obs, thunar} 2> /dev/null 
 
 
 # ---Window&Layouts--
@@ -64,7 +62,7 @@ alt + {h,l}
 
 # scratchpad toggle
 alt + z
-	~/.config/bspwm/scripts/scratchpad_toggle
+	"$HOME"/.config/bspwm/scripts/scratchpad_toggle
 
 # move the node in the given direction
 alt + shift + {h,j,k,l}
@@ -92,4 +90,8 @@ alt + o
 
 alt + b
    polybar-msg cmd toggle && bspc config top_padding $(bspc config top_padding | grep -q "24" && echo 0 || echo 24)
+
+# Themes and colors
+alt + d
+   "$HOME"/scripts/color_switcher/switcher.py
 

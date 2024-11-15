@@ -1,0 +1,9 @@
+[colors]
+background = {{ theme.background }}
+background-alt =  {{ theme.sblack }}
+foreground =  {{ theme.foreground }}
+primary =  {{ theme.primary  }}
+secondary =  {{ theme.secondary }}
+urgent =  {{ theme.red }}
+disabled =  {{ theme.sblack }}
+

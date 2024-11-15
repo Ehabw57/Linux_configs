@@ -1,0 +1,25 @@
+background: "#ffffff"     # Light background
+foreground: "#282a36"     # Dark foreground for contrast
+primary: "#44475a"        # Darker shade for primary elements
+secondary: "#6272a4"      # Darker shade for secondary elements
+red: "#ff5555"
+green: "#50fa7b"
+yellow: "#f1fa8c"
+blue: "#bd93f9"
+magenta: "#ff79c6"
+cyan: "#8be9fd"
+white: "#ffffff"
+black: "#f8f8fa"
+
+sblack: "#f0f0f0"
+sred: "#ff6e6e"
+sgreen: "#69ff94"
+syellow: "#ffffa5"
+sblue: "#d6acff"
+smagenta: "#ff92df"
+scyan: "#a4ffff"
+swhite: "#ffffff"
+
+# GTK settings
+gtk_theme: "Skeuos-Blue"
+font: "Sans 10"

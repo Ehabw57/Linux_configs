@@ -2,7 +2,7 @@
 configuration {
 	/*---------- General setting ----------*/
 	modi: "drun";
-	case-sensitive: false;
+	case-sensitive: true;
 	cycle: true;
 	filter: "";
 	scroll-method: 0;

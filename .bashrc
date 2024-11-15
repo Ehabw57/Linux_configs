@@ -31,6 +31,8 @@ lb01="$username""52.204.97.243"
 #some cool key-bindgs
 bind -x '"\C-o":"source ~/scripts/navigetor.sh"' # Find Your way in dirctorys
 bind -x '"\C-l":". ~/scripts/list_sessions.sh"' # List all opend sessions
+bind -x '"\C-x":"clear"'
+
 
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init --path)"

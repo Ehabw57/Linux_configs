@@ -1,0 +1,12 @@
+* {
+    red:                         {{ theme.red }};
+    blue:                        {{ theme.blue }};
+    yallow:                      {{ theme.yellow }};
+    green:                       {{ theme.green }};
+    lightfg:                     {{ theme.swhite }};
+    lightbg:                     {{ theme.sblack }};
+    foreground:                  {{ theme.foreground }};
+    background:                  {{ theme.background }};
+    background-color:            {{ theme.green }};
+    }
+
